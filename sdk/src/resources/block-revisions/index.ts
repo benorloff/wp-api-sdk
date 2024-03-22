@@ -1,14 +1,11 @@
 import { Base } from "../base";
-import { Page } from "./types";
+import { BlockRevision } from "./types";
 
-const resourceName = 'pages';
+const resourceName = 'blocks/<parent>/revisions';
 
-export class Pages extends Base {
-    getPageById(id: number): Promise<Page> {
-        return this.request<Page>(`/${resourceName}/${id}`);
-    }
+export class BlockRevisions extends Base {
 
-    getPages(): Promise<Page[]> {
-        return this.request<Page[]>(`/${resourceName}`);
+    getBlockRevisions(): Promise<BlockRevision[]> {
+        return this.request<BlockRevision[]>(`/${resourceName}`);
     }
 }

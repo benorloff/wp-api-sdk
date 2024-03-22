@@ -1,14 +1,11 @@
 import { Base } from "../base";
-import { Page } from "./types";
+import { BlockDirectoryItem } from "./types";
 
-const resourceName = 'pages';
+const resourceName = 'blockDirectoryItems';
 
-export class Pages extends Base {
-    getPageById(id: number): Promise<Page> {
-        return this.request<Page>(`/${resourceName}/${id}`);
-    }
+export class BlockDirectoryItems extends Base {
 
-    getPages(): Promise<Page[]> {
-        return this.request<Page[]>(`/${resourceName}`);
+    getBlockDirectoryItems(): Promise<BlockDirectoryItem[]> {
+        return this.request<BlockDirectoryItem[]>(`/${resourceName}`);
     }
 }
